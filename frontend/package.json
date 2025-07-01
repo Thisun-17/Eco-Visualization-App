@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/animations": "^20.0.6",
+    "@swimlane/ngx-charts": "^23.0.0-alpha.0"
+  }
+}
