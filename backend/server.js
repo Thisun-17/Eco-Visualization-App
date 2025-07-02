@@ -13,15 +13,9 @@ app.use(express.json());
 app.use('/api', require('./routes/api')); // Import API routes 
 
 // Database connection
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/ecodata';
-mongoose.connect(mongoUri)
-  .then(() => {
-    console.log(`Connected to MongoDB at ${mongoUri.includes('mongodb.net') ? 'Atlas' : 'localhost'}`);
-  })
-  .catch(err => {
-    console.error('MongoDB connection error:', err);
-    console.log('Tip: If using Atlas, make sure your IP is whitelisted at https://cloud.mongodb.com');
-  });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ecodata')
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
 app.get('/', (req, res) => {
