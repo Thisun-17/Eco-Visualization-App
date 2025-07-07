@@ -1,0 +1,275 @@
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Loading States */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ecf0f1;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  margin: 20px 0;
+}
+
+.retry-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.retry-btn:hover {
+  background-color: #c82333;
+}
+
+.troubleshoot {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff3cd;
+  border-radius: 5px;
+  border-left: 4px solid #ffc107;
+}
+
+.troubleshoot code {
+  background-color: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card.total-elephants {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+.stat-card.total-parks {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.stat-card.total-area {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.stat-icon {
+  font-size: 3em;
+  margin-right: 20px;
+}
+
+.stat-info h3 {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.stat-info p {
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+  font-size: 1.1em;
+}
+
+/* Data Section */
+.data-section {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.data-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.data-table th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-weight: bold;
+  color: #495057;
+  font-size: 0.95em;
+  position: sticky;
+  top: 0;
+}
+
+.data-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.data-table tr.highlight {
+  background-color: #e8f5e8;
+}
+
+.park-name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.province {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.population {
+  font-weight: bold;
+  color: #27ae60;
+  font-size: 1.1em;
+}
+
+.area, .density {
+  color: #34495e;
+}
+
+.year {
+  color: #8e44ad;
+  font-weight: bold;
+}
+
+/* Conservation Note */
+.conservation-note {
+  background: linear-gradient(135deg, #d5e8d4 0%, #e8f5c8 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid #27ae60;
+  margin-top: 30px;
+}
+
+.conservation-note h3 {
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+.conservation-note p {
+  color: #2c3e50;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* No Data State */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-icon {
+    font-size: 2.5em;
+    margin-right: 15px;
+  }
+
+  .data-section {
+    padding: 20px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 10px 8px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-info h3 {
+    font-size: 2em;
+  }
+
+  .data-table {
+    font-size: 0.8em;
+  }
+}
