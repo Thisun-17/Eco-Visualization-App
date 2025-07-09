@@ -1,0 +1,53 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>Eco Visualization</h1>
+      <p>Please sign in to continue</p>
+    </div>
+    
+    <form (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="username" 
+          name="username"
+          placeholder="Enter your username"
+          required
+          class="form-input"
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password"
+          placeholder="Enter your password"
+          required
+          class="form-input"
+        >
+      </div>
+      
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      
+      <button 
+        type="submit" 
+        class="login-button"
+        [disabled]="isLoading"
+      >
+        <span *ngIf="isLoading" class="loading-spinner"></span>
+        {{ isLoading ? 'Signing in...' : 'Sign In' }}
+      </button>
+    </form>
+    
+    <div class="demo-credentials">
+      <p><small>Demo credentials: admin / admin</small></p>
+    </div>
+  </div>
+</div>
